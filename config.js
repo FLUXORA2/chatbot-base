@@ -29,22 +29,69 @@ const CONFIG = {
   // PREGUNTAS
   // =========================
 
-  questions: [
+ questions: [
 
-    {
-      id: "servicio",
+  {
+    id: "servicio",
 
-      type: "options",
+    type: "options",
 
-      question:
-        "¿Qué estás buscando?",
+    question:
+      "¿Qué estás buscando?",
 
-      options: [
-        "Información",
-        "Solicitar presupuesto",
-        "Quiero contratar"
-      ]
-    },
+    options: [
+      "Información",
+      "Solicitar presupuesto",
+      "Quiero contratar"
+    ],
+
+    scoring: {
+      "Información": 0,
+      "Solicitar presupuesto": 4,
+      "Quiero contratar": 7
+    }
+  },
+
+
+  {
+    id: "ubicacion",
+
+    type: "text",
+
+    question:
+      "¿En qué localidad te encuentras?",
+
+    placeholder:
+      "Ej. Madrid"
+  },
+
+
+  {
+    id: "nombre",
+
+    type: "text",
+
+    question:
+      "¿Cómo te llamas?",
+
+    placeholder:
+      "Tu nombre"
+  },
+
+
+  {
+    id: "telefono",
+
+    type: "tel",
+
+    question:
+      "¿A qué teléfono podemos contactarte?",
+
+    placeholder:
+      "Ej. 612 345 678"
+  }
+
+]
 
 
     {
