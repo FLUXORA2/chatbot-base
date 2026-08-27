@@ -359,6 +359,9 @@ function calculateScore() {
   return score;
 
 }
+  return score;
+
+}
 
   });
 
