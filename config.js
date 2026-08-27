@@ -1,19 +1,33 @@
 const CONFIG = {
 
-  botName: "AeroBot",
+  // =========================
+  // IDENTIDAD
+  // =========================
+
+  botName: "Bot Demo",
 
   companyName: "Empresa Demo",
 
+
+  // =========================
+  // BIENVENIDA
+  // =========================
+
   welcome: {
+
     greeting: "Hola 👋",
 
     title:
       "¿En qué podemos ayudarte?",
 
     description:
-      "Responde unas preguntas rápidas y te ayudaremos a encontrar la mejor opción."
+      "Responde unas preguntas rápidas y te ayudaremos."
   },
 
+
+  // =========================
+  // PREGUNTAS
+  // =========================
 
   questions: [
 
@@ -71,6 +85,34 @@ const CONFIG = {
         "Ej. 612 345 678"
     }
 
-  ]
+  ],
+
+
+  // =========================
+  // SCORING
+  // =========================
+
+  scoring: {
+
+    "Información": 2,
+
+    "Solicitar presupuesto": 5,
+
+    "Quiero contratar": 7
+
+  },
+
+
+  // =========================
+  // CRM
+  // =========================
+
+  crm: {
+
+    enabled: true,
+
+    statusInicial: "Nuevo"
+
+  }
 
 };
