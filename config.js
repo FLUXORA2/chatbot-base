@@ -107,12 +107,14 @@ const CONFIG = {
   // CRM
   // =========================
 
-  crm: {
+crm: {
 
-    enabled: true,
+  enabled: true,
 
-    statusInicial: "Nuevo"
+  statusInicial: "Nuevo",
 
-  }
+  webhookUrl: ""
+
+}
 
 };
