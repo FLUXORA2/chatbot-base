@@ -94,6 +94,8 @@ const CONFIG = {
 
   scoring: {
 
+  points: {
+
     "Información": 2,
 
     "Solicitar presupuesto": 5,
@@ -101,6 +103,16 @@ const CONFIG = {
     "Quiero contratar": 7
 
   },
+
+  levels: {
+
+    clientePotencial: 6,
+
+    interesado: 3
+
+  }
+
+},
 
 
   // =========================
