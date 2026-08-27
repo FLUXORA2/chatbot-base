@@ -341,18 +341,24 @@ function calculateScore() {
 
   let score = 0;
 
-  Object.values(lead).forEach(value => {
+  CONFIG.questions.forEach(question => {
+
+    const answer = lead[question.id];
 
     if (
-      CONFIG.scoring &&
-      CONFIG.scoring.points &&
-      CONFIG.scoring.points[value]
+      question.scoring &&
+      question.scoring[answer]
     ) {
 
-      score +=
-        CONFIG.scoring.points[value];
+      score += question.scoring[answer];
 
     }
+
+  });
+
+  return score;
+
+}
 
   });
 
