@@ -25,11 +25,11 @@ const CONFIG = {
   },
 
 
-  // =========================
-  // PREGUNTAS
-  // =========================
+ // =========================
+// PREGUNTAS
+// =========================
 
- questions: [
+questions: [
 
   {
     id: "servicio",
@@ -91,48 +91,7 @@ const CONFIG = {
       "Ej. 612 345 678"
   }
 
-]
-
-
-    {
-      id: "ubicacion",
-
-      type: "text",
-
-      question:
-        "¿En qué localidad te encuentras?",
-
-      placeholder:
-        "Ej. Madrid"
-    },
-
-
-    {
-      id: "nombre",
-
-      type: "text",
-
-      question:
-        "¿Cómo te llamas?",
-
-      placeholder:
-        "Tu nombre"
-    },
-
-
-    {
-      id: "telefono",
-
-      type: "tel",
-
-      question:
-        "¿A qué teléfono podemos contactarte?",
-
-      placeholder:
-        "Ej. 612 345 678"
-    }
-
-  ],
+],
 
 
   // =========================
