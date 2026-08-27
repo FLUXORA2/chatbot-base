@@ -333,7 +333,61 @@ function nextQuestion() {
   );
 
 }
+/* =====================================================
+   SCORING
+===================================================== */
 
+function calculateScore() {
+
+  let score = 0;
+
+  Object.values(lead).forEach(value => {
+
+    if (
+      CONFIG.scoring &&
+      CONFIG.scoring.points &&
+      CONFIG.scoring.points[value]
+    ) {
+
+      score +=
+        CONFIG.scoring.points[value];
+
+    }
+
+  });
+
+  return score;
+
+}
+
+
+/* =====================================================
+   CLASIFICACIÓN
+===================================================== */
+
+function getLeadStatus(score) {
+
+  if (
+    score >=
+    CONFIG.scoring.levels.clientePotencial
+  ) {
+
+    return "🔥 Cliente potencial";
+
+  }
+
+  if (
+    score >=
+    CONFIG.scoring.levels.interesado
+  ) {
+
+    return "🟡 Interesado";
+
+  }
+
+  return "🔵 Solo información";
+
+}
 
 /* =====================================================
    FINAL
@@ -344,10 +398,45 @@ function finish() {
   updateProgress();
 
 
+  /* -----------------------------------------------
+     CALCULAR SCORE
+  ----------------------------------------------- */
+
+  const score =
+    calculateScore();
+
+
+  /* -----------------------------------------------
+     CLASIFICAR LEAD
+  ----------------------------------------------- */
+
+  const status =
+    getLeadStatus(score);
+
+
+  /* -----------------------------------------------
+     GUARDAR RESULTADO
+  ----------------------------------------------- */
+
+  lead.score =
+    score;
+
+  lead.status =
+    status;
+
+
+  /* -----------------------------------------------
+     MENSAJE FINAL
+  ----------------------------------------------- */
+
   addBotMessage(
     "¡Perfecto! Hemos recibido tus datos correctamente."
   );
 
+
+  /* -----------------------------------------------
+     RESULTADO
+  ----------------------------------------------- */
 
   const result =
     document.createElement("div");
@@ -376,6 +465,13 @@ function finish() {
       contigo.
     </p>
 
+
+    <p>
+      <strong>
+        ${status}
+      </strong>
+    </p>
+
   `;
 
 
@@ -383,6 +479,10 @@ function finish() {
 
   scrollChat();
 
+
+  /* -----------------------------------------------
+     DEBUG
+  ----------------------------------------------- */
 
   console.log(
     "NUEVO LEAD:",
